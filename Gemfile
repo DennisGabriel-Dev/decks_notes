@@ -48,3 +48,6 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 end
+
+# crypto library for password hashing https://github.com/bcrypt-ruby/bcrypt-ruby
+gem 'bcrypt', '~> 3.1', '>= 3.1.12'
