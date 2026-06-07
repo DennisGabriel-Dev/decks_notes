@@ -7,4 +7,15 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  namespace :api do
+    namespace :v1 do
+      resources :notebooks
+
+
+      # Auth session routes
+      post 'auth/login', to: 'authentication#login'
+      post 'auth/register', to: 'authentication#register'
+    end
+  end
 end
