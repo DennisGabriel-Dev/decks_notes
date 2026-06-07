@@ -51,3 +51,6 @@ end
 
 # crypto library for password hashing https://github.com/bcrypt-ruby/bcrypt-ruby
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
+
+# JSON Web Token for authentication
+gem 'jwt', '~> 3.2'
