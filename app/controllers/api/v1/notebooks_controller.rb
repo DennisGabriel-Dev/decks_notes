@@ -3,13 +3,21 @@ class Api::V1::NotebooksController < ApplicationController
 
   def index
     @notebooks = Notebook.all
-    render json: @notebooks, status: :ok if @notebooks.present?
-    render json: { error: 'No notebooks found' }, status: :no_content
+    content = if @notebooks.present?
+      @notebooks
+    else
+      { error: 'No notebooks found' }
+    end
+    render json: content, status: :ok
   end
 
   def show
-    render json: @notebook, status: :ok if @notebook.present?
-    render json: { error: 'Notebook not found' }, status: :not_found
+    content = if @notebook.present?
+      @notebook
+    else
+      { error: 'Notebook not found' }
+    end
+    render json: content, status: :ok
   end
 
   def new
